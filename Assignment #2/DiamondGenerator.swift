@@ -5,11 +5,11 @@ struct MyDiamondGenerator {
         let size = diamond
         
         //Create responses for invalid entries
-        guard size > 2 else {
-            return "Enter a number between 3 and 21"
+        guard size > 1 else {
+            return "Enter a number between 2 and 21"
         }
         guard size < 22 else {
-            return "Enter a number between 3 and 21"
+            return "Enter a number between 2 and 21"
         }
         
     //Create an odd diamond
