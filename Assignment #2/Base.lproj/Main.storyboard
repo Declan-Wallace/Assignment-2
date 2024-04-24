@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diamond Generator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlx-5I-MVg">
-                                <rect key="frame" x="23.333333333333343" y="165.33333333333334" width="346.33333333333326" height="40.666666666666657"/>
+                                <rect key="frame" x="54" y="165.33333333333334" width="285" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F0u-io-RtY">
-                                <rect key="frame" x="73.666666666666671" y="214" width="245.66666666666663" height="78.333333333333314"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F0u-io-RtY">
+                                <rect key="frame" x="73.666666666666686" y="214" width="202.33333333333331" height="34.333333333333343"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input number between 2 and 23..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3b9-Ts-Gxv">
                                         <rect key="frame" x="0.0" y="0.0" width="245.66666666666666" height="34"/>
@@ -31,25 +31,26 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRJ-qv-d1L">
-                                        <rect key="frame" x="0.0" y="44" width="245.66666666666666" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="202.33333333333334" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Generate">
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="generateButtonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="1Ev-wy-kOO"/>
+                                            <action selector="generateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="avd-ND-Nq4"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="3b9-Ts-Gxv"/>
+                                    </mask>
+                                </variation>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b3O-Hv-10X">
-                                <rect key="frame" x="25" y="300" width="343" height="497"/>
+                            <skView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Fa-Qy-pv1">
+                                <rect key="frame" x="16" y="300" width="361" height="518"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            </skView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -64,8 +65,7 @@
                     <connections>
                         <outlet property="generateButton" destination="PRJ-qv-d1L" id="dlB-br-x5l"/>
                         <outlet property="generatorLabel" destination="xlx-5I-MVg" id="8Fk-67-T38"/>
-                        <outlet property="inputField" destination="3b9-Ts-Gxv" id="Jr7-nW-lDH"/>
-                        <outlet property="outputField" destination="b3O-Hv-10X" id="5ft-37-iWy"/>
+                        <outlet property="skView" destination="0Fa-Qy-pv1" id="3if-pF-Rzd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -74,9 +74,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
