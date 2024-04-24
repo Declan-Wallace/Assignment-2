@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     }
     //Determine size + placement of diamond
     @IBAction func generateButtonTapped(_ sender: UIButton) {
+        scene.removeAllChildren()
         guard let userInput = inputField.text,
               let sizeDouble = Double(userInput),
               let size = CGFloat(exactly: sizeDouble) else {
