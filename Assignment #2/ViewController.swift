@@ -46,5 +46,6 @@ class ViewController: UIViewController {
         
         scene.addChild(diamondShape)
         inputField.text = ""
+        hiddenView.text = ""
     }
 }
