@@ -39,5 +39,6 @@ class ViewController: UIViewController {
         diamondShape.position = sceneCenter
         
         scene.addChild(diamondShape)
+        inputField.text = ""
     }
 }
