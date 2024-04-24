@@ -16,7 +16,13 @@ class ViewController: UIViewController {
     }
     //Determine size + placement of diamond
     @IBAction func generateButtonTapped(_ sender: UIButton) {
-        let size: CGFloat = 200
+        guard let userInput = inputField.text,
+              let sizeDouble = Double(userInput),
+              let size = CGFloat(exactly: sizeDouble) else {
+            generatorLabel.text = "Please enter a number"
+            return
+        }
+        
         var diamondPoints = [
             CGPoint(x: 0, y: size / 2),
             CGPoint(x: size / 2, y: size),
@@ -28,6 +34,7 @@ class ViewController: UIViewController {
         let diamondShape = SKShapeNode(points: &diamondPoints, count: diamondPoints.count)
         
         let sceneCenter = CGPoint(x: 100, y: scene.size.height / 2)
+        
         diamondShape.position = sceneCenter
         
         scene.addChild(diamondShape)
