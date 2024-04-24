@@ -9,9 +9,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var outputField: UITextView!
     var shapeScene: ShapeScene!
     
-    //Establish connecton to struct in other file
-    let diamondGenerator = MyDiamondGenerator()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,7 +27,7 @@ class ViewController: UIViewController {
     @IBAction func generateButtonTapped(_ sender: AnyObject) {
         guard let text = inputField.text,
               let diamond = Int(text) else {
-            outputField.text = "Enter a number between 2 and 21"
+            outputField.text = "Enter a number between 2 and 23"
             outputField.textAlignment = .center
             let topInset = 0
             outputField.contentInset = UIEdgeInsets(top: CGFloat(topInset), left: 0, bottom: 0, right: 0)
