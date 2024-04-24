@@ -25,16 +25,16 @@ class ViewController: UIViewController {
         }
         
         var diamondPoints = [
-            CGPoint(x: 0, y: size / 2),
-            CGPoint(x: size / 2, y: size),
-            CGPoint(x: size, y: size / 2),
             CGPoint(x: size / 2, y: 0),
-            CGPoint(x: 0, y: size / 2)
+            CGPoint(x: size, y: size / 2),
+            CGPoint(x: size / 2, y: size),
+            CGPoint(x: 0, y: size / 2),
+            CGPoint(x: size / 2, y: 0)
         ]
         
         let diamondShape = SKShapeNode(points: &diamondPoints, count: diamondPoints.count)
         
-        let sceneCenter = CGPoint(x: 100, y: scene.size.height / 2)
+        let sceneCenter = CGPoint(x: 0, y: 300)
         
         diamondShape.position = sceneCenter
         
