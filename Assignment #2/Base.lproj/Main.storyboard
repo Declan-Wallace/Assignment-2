@@ -22,16 +22,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F0u-io-RtY">
-                                <rect key="frame" x="73.666666666666686" y="214" width="202.33333333333331" height="34.333333333333343"/>
+                            <skView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Fa-Qy-pv1">
+                                <rect key="frame" x="16" y="300" width="361" height="518"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </skView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F0u-io-RtY">
+                                <rect key="frame" x="95" y="213" width="202.33333333333337" height="78.333333333333314"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input number between 2 and 23..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3b9-Ts-Gxv">
                                         <rect key="frame" x="0.0" y="0.0" width="245.66666666666666" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input a number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IeP-Aj-yc3">
+                                        <rect key="frame" x="0.0" y="0.0" width="202.33333333333334" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRJ-qv-d1L">
-                                        <rect key="frame" x="0.0" y="0.0" width="202.33333333333334" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="44" width="202.33333333333334" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Generate">
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
@@ -47,10 +56,6 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <skView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Fa-Qy-pv1">
-                                <rect key="frame" x="16" y="300" width="361" height="518"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </skView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -65,6 +70,7 @@
                     <connections>
                         <outlet property="generateButton" destination="PRJ-qv-d1L" id="dlB-br-x5l"/>
                         <outlet property="generatorLabel" destination="xlx-5I-MVg" id="8Fk-67-T38"/>
+                        <outlet property="inputField" destination="IeP-Aj-yc3" id="hFN-Gp-TzR"/>
                         <outlet property="skView" destination="0Fa-Qy-pv1" id="3if-pF-Rzd"/>
                     </connections>
                 </viewController>
