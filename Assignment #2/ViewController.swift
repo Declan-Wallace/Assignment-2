@@ -6,6 +6,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var generatorLabel: UILabel!
     @IBOutlet weak var skView: SKView!
     @IBOutlet weak var inputField: UITextField!
+    @IBOutlet weak var hiddenView: UITextView!
     var scene: SKScene!
     var shapeScene: ShapeScene!
     
@@ -20,9 +21,14 @@ class ViewController: UIViewController {
         guard let userInput = inputField.text,
               let sizeDouble = Double(userInput),
               let size = CGFloat(exactly: sizeDouble) else {
-            generatorLabel.text = "Please enter a number"
+            hiddenView.text = "Please enter a number"
             return
         }
+        
+        if size > 400 {
+                    hiddenView.text = "Please enter a number under 400"
+                    return
+                }
         
         var diamondPoints = [
             CGPoint(x: size / 2, y: 0),
